@@ -6,7 +6,11 @@ namespace Andaluh
 {
     public static class EPA
     {
-        public static string Transcribe(string text, bool debug = false)
+        public static string Transcribe(
+            string text,
+            string vaf = "VAF",
+            string vvf = "VVF",
+            bool debug = false)
         {
             //Do not start transcription if the input is empty
             if (string.IsNullOrWhiteSpace(text))
@@ -18,7 +22,9 @@ namespace Andaluh
             return EPARules.VRules(text);
         }
 
-        public static string ToAndaluh(this string text, bool debug = false)
+        public static string ToAndaluh(
+            this string text,
+            bool debug = false)
         {
             //Do not start transcription if the input is empty
             if (string.IsNullOrWhiteSpace(text))
