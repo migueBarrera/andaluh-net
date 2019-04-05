@@ -19,7 +19,20 @@ namespace Andaluh
             }
 
 
-            return EPARules.VRules(text);
+            var resH = EPARules.HRules(text);
+
+            var resX = EPARules.XRules(resH);
+
+            var resCH = EPARules.CHRules(resX);
+
+            var resV = EPARules.VRules(resCH);
+
+            var resLL = EPARules.LLRules(resV);
+
+            var resL = EPARules.LRules(resLL);
+
+
+            return resL;
         }
 
         public static string ToAndaluh(
